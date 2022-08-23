@@ -18,7 +18,7 @@ const Home = () => {
       color="gray"
       subtitle="Profile"
       title={`${user?.firstName} ${user?.lastName}`}
-      description={`${user.playlistCount} public playlists`}
+      description={`${user?.playlistCount} public playlists`}
       image="https://placekitten.com/300/300"
     >
       <Box color="white" paddingX="40px">

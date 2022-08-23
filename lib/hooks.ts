@@ -30,3 +30,13 @@ export const useArtist = () => {
     isError: error,
   }
 }
+
+export const useSelectedPlaylist = (id) => {
+  const { data, error } = useSWR(`/playlist/${id}`, fetcher)
+  console.log("playlist data", data)
+  return {
+    playlist: (data as any) || [],
+    isLoading: !data && !error,
+    isError: error,
+  }
+}
