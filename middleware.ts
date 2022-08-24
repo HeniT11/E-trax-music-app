@@ -1,14 +1,13 @@
-import { NextResponse } from 'next/server'
+import { NextResponse, NextRequest } from 'next/server'
 
-const singnedinPages = ['/', '/playlist', 'library']
-export default function middleware(req) {
-  if (singnedinPages.find((p) => p === req.nextUrl.pathname)) {
-    const token = req.cookies.TRAX_ACCESS_TOKEN
-    console.log('token', token)
-    // if (!token) {
-    //   const url = req.nextUrl.clone()
-    //   url.pathname = '/signin'
-    //   return NextResponse.redirect(url)
-    // }
+const signedinPages = ['/', '/playlist', '/library']
+
+export default function middleware(req: NextRequest) {
+  if (signedinPages.find((p) => p === req.nextUrl.pathname)) {
+    const originUrl = req.nextUrl.origin
+    const token = req.cookies.get('TRAX_ACCESS_TOKEN')
+    if (!token) {
+      return NextResponse.redirect(`${originUrl}/signin`)
+    }
   }
 }

@@ -12,7 +12,7 @@ const GradientLayout = ({
 }) => {
   return (
     <Box
-      height="calc(83.2vh)"
+      height="calc(100vh - 100px)"
       overflowY="auto"
       bgGradient={`linear(${color}.500 0%, ${color}.600 15%, ${color}.700 40%, rgba(0,0,0,0.95) 75%)`}
     >
