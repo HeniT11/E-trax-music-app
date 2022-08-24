@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/layout'
 import { useRouter } from 'next/router'
 import GradientLayout from '../../components/gradientLayout'
 import SongTable from '../../components/songsTable'

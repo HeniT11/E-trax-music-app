@@ -1,9 +1,7 @@
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import 'reset-css'
-import { StoreProvider } from 'easy-peasy'
 import { useState } from 'react'
 import PlayerLayout from '../components/playerLayout'
-import { store } from '../lib/store'
 import { SongContext } from '../lib/songContext'
 
 const theme = extendTheme({
@@ -41,6 +39,7 @@ const MyApp = ({ Component, pageProps }) => {
     <ChakraProvider theme={theme}>
       {/* <StoreProvider store={store}> */}
       <SongContext.Provider
+        // eslint-disable-next-line react/jsx-no-constructed-context-values
         value={{ activeSong, setActiveSong, activeSongs, setActiveSongs }}
       >
         {Component.authPage ? (

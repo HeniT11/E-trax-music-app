@@ -20,7 +20,6 @@ import {
   MdOutlinePauseCircleFilled,
   MdOutlineRepeat,
 } from 'react-icons/md'
-import { useStoreActions } from 'easy-peasy'
 import { formatTime } from '../lib/formatters'
 import { SongContext } from '../lib/songContext'
 

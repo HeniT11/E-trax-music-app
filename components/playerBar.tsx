@@ -1,5 +1,4 @@
 import { Box, Flex, Text } from '@chakra-ui/layout'
-import { useStoreState } from 'easy-peasy'
 import { useContext } from 'react'
 import { SongContext } from '../lib/songContext'
 import Player from './player'
