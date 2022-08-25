@@ -16,13 +16,11 @@ const getBGColor = (id) => {
   ]
   return colors[id - 1] || colors[Math.floor(Math.random() * colors.length)]
 }
-
 const Playlist = () => {
   const router = useRouter()
   const { id } = router.query
   const { playlist } = useSelectedPlaylist(id)
   const color = getBGColor(playlist?.id)
-  console.log(playlist.songs)
   return (
     <GradientLayout
       color={color}
@@ -32,7 +30,7 @@ const Playlist = () => {
       description={`${playlist?.songs?.length} songs`}
       image={`https://picsum.photos/400?random=${playlist.id}`}
     >
-      <SongTable songs={playlist?.songs}/>
+      <SongTable songs={playlist?.songs} />
     </GradientLayout>
   )
 }

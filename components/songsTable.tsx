@@ -2,9 +2,8 @@ import { Box } from '@chakra-ui/layout'
 import { Table, Thead, Th, Td, Tr, Tbody, IconButton } from '@chakra-ui/react'
 import { BsFillPlayFill } from 'react-icons/bs'
 import { AiOutlineClockCircle } from 'react-icons/ai'
-import { useStoreActions } from 'easy-peasy'
 import { useContext } from 'react'
-import { formatDate, formatTime } from '../lib/formatters'
+import { formatTime } from '../lib/formatters'
 import { SongContext } from '../lib/songContext'
 
 const SongTable = ({ songs }) => {
